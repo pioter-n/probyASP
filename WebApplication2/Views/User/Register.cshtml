@@ -1,0 +1,39 @@
+﻿@model WebApplication2.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Rejestracja";
+}
+
+<form asp-controller="User" asp-action="Register" method="post">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" asp-for="UserName" class="form-control" id="username">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" asp-for="Password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" onclick="switchType('exampleInputPassword1')" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+
+function changeType(elementId, type) {
+    var element = document.getElementById(elementId);
+    element.type = type;
+}
+
+function switchType(elementId) {
+    var element = document.getElementById(elementId);
+    if (element.type === 'text') {
+        element.type = 'password';
+    } else {
+        element.type = 'text';
+    }
+}
+
+</script>

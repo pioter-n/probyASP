@@ -1,0 +1,27 @@
+﻿@model WebApplication2.Domain.Todo
+
+
+
+@{
+    ViewData["Title"] = "ToDo";
+}
+
+<form asp-controller="ToDo" asp-action="TodoList" method="post">
+   
+     <div class="form-group">
+                <label for="decriptiontodoadd">TodoList</label>
+                <input type="text" asp-for="Description" class="form-control" id="descriptiontodoadd">
+                <span asp-validation-for="Description" class="text-danger"></span>
+        
+            </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+      <div class="form-group">
+            <label for="decriptiontodo">TodoList</label>
+            <input type="text" asp-for="Description" class="form-control" id="descriptiontodo">
+            <span asp-validation-for="Description" class="text-danger"></span>
+    
+        </div>
+</form>
